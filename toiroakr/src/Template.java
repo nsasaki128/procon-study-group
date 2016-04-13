@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 
 public class Template {
-	static FastReader2 in = new FastReader2();
+	private static FastReader2 in = new FastReader2();
 
 	public static void main(String[] args) throws Exception {
 		Template main = new Template();
