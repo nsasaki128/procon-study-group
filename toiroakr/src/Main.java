@@ -49,15 +49,29 @@ public class Main {
 			}
 		}
 
+		int ans = 0;
 		for (int i = 0; i < field.length; i++) {
 			for (int j = 0; j < field.length; j++) {
-				startSearchAt(i, j, field, copyMemo(memo));
+				if (field[i][j] == BLOCK) {
+					continue;
+				}
+				ans = Math.max(ans, startSearchAt(i, j, field, copyMemo(memo)));
 			}
 		}
 	}
 
-	private void startSearchAt(int i, int j, int[][] field, int[][][] memo) {
-		
+	private int startSearchAt(int x, int y, int[][] field, int[][][] memo) {
+		memo[x][y][COUNT] = 0;
+
+		int ans = 0;
+		int count = 0;
+		for (int move = 0; move < MOVE.length; move++) {
+			if (field[x + MOVE[move][0]][y + MOVE[move][1]] == BLOCK) {
+				continue;
+			}
+			ans = Math.max(ans, search(x, y, move, field, memo, count));
+		}
+		return 0;
 	}
 
 	private int[][][] copyMemo(int[][][] memo) {
