@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 
+/**
+ * @see <a href='http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?lang=jp&id='>問題</a>
+ */
 public class Template {
 	private static FastReader2 in = new FastReader2();
 
@@ -13,15 +16,9 @@ public class Template {
 		main.run();
 	}
 
-	void run() {
+	private void run() {
 		int n = in.nextInt();
 
-		System.out.println(n);
-	}
-
-	void printExit(Object msg) {
-		System.out.println(msg.toString());
-		System.exit(0);
 	}
 }
 
